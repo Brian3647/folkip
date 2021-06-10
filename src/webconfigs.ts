@@ -1,4 +1,4 @@
-import { WebConfigs } from "./types";
+import { WebConfigs } from "./types.d";
 
 export default <WebConfigs>{
 	defaults: {
