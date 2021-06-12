@@ -1,0 +1,96 @@
+import { useEffect, useState } from "react";
+import { reactState } from "../src/types";
+import webconfigs from "../src/webconfigs";
+
+function SideBar(): JSX.Element {
+	const [notifications, setNotifications]: reactState<number> = useState<number>(0);
+
+	useEffect(() => {
+		const notifications_storage: string | null = window.localStorage.getItem("notifications");
+		setNotifications(Number(notifications_storage) || 0);
+	});
+
+	return (
+		<div className="flex flex-row min-h-screen bg-gray-200">
+			<div className="flex flex-col w-56 overflow-hidden bg-gray-800 rounded-r-xl">
+				<div className="flex items-center justify-center h-20 shadow-md">
+					<h1 className="text-3xl text-indigo-500 uppercase">{webconfigs.defaults.title}</h1>
+				</div>
+				<ul className="flex flex-col py-4">
+					<li>
+						<a
+							href="#"
+							className="flex flex-row items-center h-12 text-gray-500 transition-transform duration-200 ease-in transform hover:translate-x-1 hover:text-white"
+						>
+							<span className="inline-flex items-center justify-center w-12 h-12 text-lg text-gray-400">
+								<i className="bx bx-home"></i>
+							</span>
+							<span className="text-sm font-mediu">Home</span>
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							className="flex flex-row items-center h-12 text-gray-500 transition-transform duration-200 ease-in transform hover:translate-x-1 hover:text-white"
+						>
+							<span className="inline-flex items-center justify-center w-12 h-12 text-lg text-gray-400">
+								<i className="bx bx-music"></i>
+							</span>
+							<span className="text-sm font-medium">Music</span>
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							className="flex flex-row items-center h-12 text-gray-500 transition-transform duration-200 ease-in transform hover:translate-x-1 hover:text-white"
+						>
+							<span className="inline-flex items-center justify-center w-12 h-12 text-lg text-gray-400">
+								<i className="bx bx-chat"></i>
+							</span>
+							<span className="text-sm font-medium">Chat</span>
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							className="flex flex-row items-center h-12 text-gray-500 transition-transform duration-200 ease-in transform hover:translate-x-1 hover:text-white"
+						>
+							<span className="inline-flex items-center justify-center w-12 h-12 text-lg text-gray-400">
+								<i className="bx bx-user"></i>
+							</span>
+							<span className="text-sm font-medium">Profile</span>
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							className="flex flex-row items-center h-12 text-gray-500 transition-transform duration-200 ease-in transform hover:translate-x-1 hover:text-white"
+						>
+							<span className="inline-flex items-center justify-center w-12 h-12 text-lg text-gray-400">
+								<i className="bx bx-bell"></i>
+							</span>
+							<span className="text-sm font-medium">Notifications</span>
+							{notifications > 0 && (
+								<span className="px-3 py-px ml-auto mr-6 text-sm text-red-500 bg-red-100 rounded-full">
+									{notifications}
+								</span>
+							)}
+						</a>
+					</li>
+					<li>
+						<a
+							href="#"
+							className="flex flex-row items-center h-12 text-gray-500 transition-transform duration-200 ease-in transform hover:translate-x-1 hover:text-white"
+						>
+							<span className="inline-flex items-center justify-center w-12 h-12 text-lg text-gray-400">
+								<i className="bx bx-log-out"></i>
+							</span>
+							<span className="text-sm font-medium">Logout</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	);
+}
+export default SideBar;
