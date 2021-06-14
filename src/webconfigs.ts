@@ -1,9 +1,11 @@
-import { WebConfigs } from "./types.d";
+import { WebConfigs } from "./types";
 
-export default <WebConfigs>{
+const obj: WebConfigs = {
 	defaults: {
 		title: "Folkip",
 		// TODO: Better web description
 		description: "Hi!"
 	}
 };
+
+export default obj;

@@ -7,4 +7,4 @@ export interface WebConfigs {
 	};
 }
 
-export type reactState<T = any> = [T, Dispatch<SetStateAction<T>>];
+export type ReactState<T = any> = [T, Dispatch<SetStateAction<T>>];
