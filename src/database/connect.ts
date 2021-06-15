@@ -8,4 +8,4 @@ export function connect() {
 			})
 			.then(() => console.log("Connected DB"))
 			.then((err: any) => console.error(err));
-}
+};

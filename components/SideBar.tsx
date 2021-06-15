@@ -25,7 +25,7 @@ function SideBar(): JSX.Element {
 				<ul className="flex flex-col py-4">
 					<li>
 						<a
-							href="#"
+							href="/"
 							className="flex flex-row items-center h-12 text-gray-500 transition-transform duration-200 ease-in transform hover:translate-x-1 hover:text-white"
 						>
 							<span className="inline-flex items-center justify-center w-12 h-12 text-lg text-gray-400">
@@ -69,7 +69,7 @@ function SideBar(): JSX.Element {
 					</li>
 					<li>
 						<a
-							href="#"
+							href="/notifications"
 							className="flex flex-row items-center h-12 text-gray-500 transition-transform duration-200 ease-in transform hover:translate-x-1 hover:text-white"
 						>
 							<span className="inline-flex items-center justify-center w-12 h-12 text-lg text-gray-400">
@@ -109,5 +109,6 @@ function SideBar(): JSX.Element {
 			</div>{" "}
 		</>
 	);
-}
+};
+
 export default SideBar;
