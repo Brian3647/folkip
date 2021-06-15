@@ -1,13 +1,11 @@
-export const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
-//connecting mongoose to db.
-
-mongoose.connect(/* database here */ {
-	useNewUrlParser: true,
-})
-
-	.then(db => console.log("db is connected"))
-	.then(err => console.error(err));
-
-
-
+export function connect() {
+	if (mongoose.connection.readyState === 4 || mongoose.connection.readyState === 3)
+		mongoose
+			.connect(process.env.MONGO_URL, {
+				useNewUrlParser: true
+			})
+			.then(() => console.log("Connected DB"))
+			.then((err: any) => console.error(err));
+}
