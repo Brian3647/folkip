@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ReactState } from "../src/types";
 import webconfigs from "../src/webconfigs";
 

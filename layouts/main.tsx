@@ -37,4 +37,4 @@ export default function Layout({ children, title, description, nodb }: Props): J
 			</UseDB>
 		</>
 	);
-}
+};
