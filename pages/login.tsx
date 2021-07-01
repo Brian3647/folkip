@@ -54,7 +54,9 @@ export default function SignIn(): JSX.Element {
 								type="submit"
 								className="px-5 py-2 font-bold text-white transition-colors bg-blue-500 rounded shadow focus:outline-none hover:bg-blue-700"
 							>
-								Log In
+								<a href="/index2">
+									Login
+								</a>
 							</button>
 						</div>
 					</div>
